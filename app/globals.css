@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background:
+    radial-gradient(1200px 600px at 50% -10%, rgba(123, 47, 247, 0.35), transparent),
+    radial-gradient(900px 500px at 100% 0%, rgba(45, 156, 219, 0.25), transparent),
+    #120b22;
+  min-height: 100vh;
+}
+
+/* Logical-property helpers so spacing flips correctly in RTL */
+.flip-x [dir="rtl"] & {
+  transform: scaleX(-1);
+}
