@@ -5,6 +5,7 @@ import { isLocale, t } from "@/lib/i18n";
 import { categories } from "@/content/categories";
 import { tipCount } from "@/content/tips";
 import CategoryCard from "@/components/CategoryCard";
+import DailyTip from "@/components/DailyTip";
 import ScamWarning from "@/components/ScamWarning";
 
 export default async function HomePage({
@@ -37,6 +38,11 @@ export default async function HomePage({
           {t(locale, "hero.cta")}
           <ArrowRight className="h-5 w-5 rtl:rotate-180" aria-hidden />
         </Link>
+      </section>
+
+      {/* Daily tip */}
+      <section>
+        <DailyTip locale={locale} />
       </section>
 
       {/* Categories */}

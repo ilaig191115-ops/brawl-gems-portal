@@ -17,7 +17,15 @@ export default function Header({ locale }: { locale: Locale }) {
             {t(locale, "site.name")}
           </span>
         </Link>
-        <LanguageSwitcher locale={locale} />
+        <div className="flex items-center gap-2">
+          <Link
+            href={`/${locale}/stats`}
+            className="rounded-full px-3 py-2 text-sm font-semibold text-white/80 transition hover:bg-white/10 hover:text-white"
+          >
+            {t(locale, "nav.stats")}
+          </Link>
+          <LanguageSwitcher locale={locale} />
+        </div>
       </div>
     </header>
   );

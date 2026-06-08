@@ -155,3 +155,13 @@ export function tipsForCategory(category: CategoryId): Tip[] {
 export function tipCount(category: CategoryId): number {
   return tipsForCategory(category).length;
 }
+
+// Pick a "tip of the day": deterministic per calendar day, so every visitor
+// sees the same tip on a given date and it rotates once each day.
+export function dailyTip(date: Date = new Date()): Tip {
+  const dayNumber = Math.floor(
+    Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()) /
+      86_400_000,
+  );
+  return tips[dayNumber % tips.length];
+}
